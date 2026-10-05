@@ -551,6 +551,82 @@ html, body {
   border-radius: 99px; background: var(--bluel); color: var(--blue);
 }
 
+/* ── ZONE PERFORMANCE TREND ──────────────────── */
+.zt-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; flex-wrap: wrap; margin-bottom: 14px; }
+.zt-title { font-size: 14px; font-weight: 800; color: var(--navy); }
+.zt-subtitle { font-size: 11.5px; color: var(--sub); margin-top: 3px; }
+.zt-controls { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+.zt-seg { display: inline-flex; border: 1px solid var(--border); border-radius: 8px; overflow: hidden; background: var(--card); }
+.zt-seg button { border: 0; background: transparent; padding: 6px 14px; font: 700 12px var(--font); color: var(--sub); cursor: pointer; transition: background .15s, color .15s; }
+.zt-seg button.active { background: var(--blue); color: #fff; }
+.zt-select { border: 1px solid var(--border); border-radius: 8px; padding: 6px 10px; font: 600 12px var(--font); color: var(--sub); background: var(--card); cursor: pointer; outline: none; }
+.zt-save { position: relative; }
+.zt-save-menu { display: none; position: absolute; right: 0; top: calc(100% + 4px); min-width: 200px; padding: 4px; background: var(--card); border: 1px solid var(--border); border-radius: 10px; box-shadow: 0 8px 24px rgba(0,0,0,0.12); z-index: 20; }
+.zt-save-menu.open { display: block; }
+.zt-save-menu button { display: block; width: 100%; text-align: left; border: 0; background: transparent; padding: 8px 10px; border-radius: 7px; font: 700 12px var(--font); color: var(--navy); cursor: pointer; }
+.zt-save-menu button:hover { background: var(--border2); }
+.zt-save-menu button span { display: block; font-weight: 500; font-size: 10.5px; color: var(--muted); margin-top: 1px; }
+.zt-insights { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 10px; margin-bottom: 14px; }
+.zt-ins { border: 1px solid var(--border); border-left: 4px solid var(--blue); border-radius: 10px; padding: 9px 12px; background: var(--card); }
+.zt-ins.good { border-left-color: var(--green); }
+.zt-ins.bad  { border-left-color: var(--red); }
+.zt-ins.warn { border-left-color: var(--orange); }
+.zt-ins-k { font-size: 9px; font-weight: 800; letter-spacing: .07em; text-transform: uppercase; color: var(--muted); margin-bottom: 3px; }
+.zt-ins-v { font-size: 11.5px; color: var(--text); line-height: 1.45; }
+.zt-ins-v b { font-weight: 800; }
+.zt-grid { display: grid; grid-template-columns: 230px repeat(3, minmax(0, 1fr)); border: 1px solid var(--border); border-radius: 12px; }
+.zt-hcell { position: sticky; top: 0; z-index: 5; padding: 11px 12px; text-align: center; border-bottom: 1px solid var(--border); border-left: 1px solid var(--border); box-shadow: 0 2px 4px rgba(15,23,42,0.04); }
+.zt-h0 { background: #FFFFFF; border-left: 0; border-top-left-radius: 11px; text-align: left; display: flex; align-items: flex-end; font-size: 10px; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; color: var(--navy); }
+.zt-h-o2d { background: #EDF8F1; color: var(--green); }
+.zt-h-del { background: #EBF3FF; color: var(--blue); }
+.zt-h-rto { background: #FDEEEE; color: var(--red); border-top-right-radius: 11px; }
+.zt-h-t { font-size: 12.5px; font-weight: 800; }
+.zt-h-s { font-size: 9.5px; font-weight: 500; opacity: .8; margin-top: 2px; }
+.zt-zone, .zt-cell { border-bottom: 1px solid var(--border); min-width: 0; }
+.zt-zone { padding: 10px; display: flex; }
+.zt-cell { border-left: 1px solid var(--border); padding: 10px 14px 4px; }
+.zt-last { border-bottom: 0; }
+.zt-sumrow { background: #F8FAFC; }
+.zt-zone.zt-last { border-bottom-left-radius: 11px; }
+.zt-cell.zt-c-rto.zt-last { border-bottom-right-radius: 11px; }
+.zt-zcard { flex: 1; border: 1px solid var(--border); border-radius: 12px; padding: 12px; background: var(--card); display: flex; flex-direction: column; justify-content: center; }
+.zt-sumrow .zt-zcard { background: var(--bluel); border-color: #CFE0FA; }
+.zt-zname { font-size: 15px; font-weight: 800; color: var(--navy); }
+.zt-zsub { font-size: 11px; color: var(--sub); margin-top: 1px; }
+.zt-zmeta { font-size: 10.5px; color: var(--muted); margin-top: 3px; }
+.zt-pills { display: grid; grid-template-columns: repeat(3, 1fr); gap: 5px; margin-top: 10px; }
+.zt-pill { border-radius: 8px; padding: 5px 2px; text-align: center; }
+.zt-pill b { display: block; font-size: 13px; font-weight: 800; line-height: 1.2; }
+.zt-pill span { display: block; font-size: 8px; font-weight: 700; letter-spacing: .05em; text-transform: uppercase; opacity: .85; }
+.zt-pill.o2d { background: #EDF8F1; color: var(--green); }
+.zt-pill.del { background: #EBF3FF; color: var(--blue); }
+.zt-pill.rto { background: #FDEEEE; color: var(--red); }
+.zt-cell-lbl { display: none; font-size: 9.5px; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); margin-bottom: 4px; }
+.zt-cell-top { display: flex; justify-content: space-between; align-items: center; gap: 6px; }
+.zt-big { font-size: 19px; font-weight: 800; letter-spacing: -0.02em; }
+.zt-latest { font-size: 9px; font-weight: 700; color: var(--muted); letter-spacing: .06em; margin-left: 6px; }
+.zt-chip { font-size: 9.5px; font-weight: 800; padding: 2px 7px; border-radius: 6px; white-space: nowrap; }
+.zt-chip.good { background: #DCFCE7; color: #15803D; }
+.zt-chip.bad  { background: #FEE2E2; color: #B91C1C; }
+.zt-chip.flat { background: var(--border2); color: var(--muted); }
+.zt-svg { display: block; width: 100%; height: auto; overflow: visible; }
+.zt-legend { display: flex; flex-wrap: wrap; gap: 6px 18px; margin-top: 12px; font-size: 10.5px; color: var(--sub); align-items: center; }
+.zt-legend span { display: inline-flex; align-items: center; gap: 6px; }
+.zt-empty { padding: 28px; text-align: center; color: var(--muted); font-size: 12px; }
+@media (max-width: 1200px) { .zt-insights { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+@media (max-width: 900px) {
+  .zt-insights { grid-template-columns: 1fr 1fr; }
+  .zt-grid { grid-template-columns: 1fr; }
+  .zt-hcell { display: none; }
+  .zt-cell { border-left: 0; }
+  .zt-cell-lbl { display: block; }
+  .zt-zone { border-bottom: 0; }
+  .zt-cell.zt-c-rto.zt-last { border-bottom-left-radius: 11px; }
+  .zt-zone.zt-last { border-bottom-left-radius: 0; }
+  .zt-cell.zt-last:not(.zt-c-rto) { border-bottom: 1px solid var(--border); }
+}
+@media (max-width: 480px) { .zt-insights { grid-template-columns: 1fr; } }
+
 /* ── DONUT ───────────────────────────────────── */
 .donut-wrap { display: flex; align-items: center; gap: 18px; }
 .donut-legend { flex: 1; display: flex; flex-direction: column; gap: 7px; }
@@ -1244,9 +1320,15 @@ html, body {
 .cutoff-tag.total { background: var(--bluel); color: var(--blue); }
 
 /* SLA Donut + Insights layout */
-.ndd-bottom-layout { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 14px; margin-top: 16px; }
-.ndd-bottom-layout > .chart-card:last-child { grid-column: 1 / -1; }
+.ndd-bottom-layout { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1.3fr); gap: 14px; margin-top: 16px; }
+@media (max-width: 1280px) { .ndd-bottom-layout { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); } .ndd-bottom-layout > .chart-card:last-child { grid-column: 1 / -1; } }
 @media (max-width: 1024px) { .ndd-bottom-layout { grid-template-columns: 1fr; } }
+.ndd-sla-card { display: flex; flex-direction: column; }
+.ndd-sla-card .donut-wrap { flex: 1; flex-direction: column; justify-content: center; gap: 16px; }
+.ndd-sla-card .donut-wrap svg { width: 150px; height: 150px; flex-shrink: 0; }
+.ndd-sla-card .donut-legend { flex: 0 0 auto; width: 100%; max-width: 280px; gap: 9px; }
+.ndd-sla-card .leg-pct { min-width: 44px; text-align: right; font-variant-numeric: tabular-nums; }
+.ndd-sla-card .leg-count { min-width: 48px; text-align: right; font-variant-numeric: tabular-nums; }
 
 /* Week day count note */
 .week-day-note {
@@ -1413,7 +1495,6 @@ html, body {
   border: 1px solid var(--border); border-radius: 8px; padding: 5px 8px;
   background: var(--card); cursor: pointer; outline: none;
 }
-.ai-provider-select { max-width: 105px; }
 
 /* thread */
 .ai-thread {
@@ -2414,7 +2495,7 @@ html, body {
 
         <!-- Bottom: SLA Donut + Attempt Distribution + AI Insights -->
         <div class="ndd-bottom-layout">
-          <div class="chart-card">
+          <div class="chart-card ndd-sla-card">
             <div class="card-title">SLA Distribution</div>
             <div class="donut-wrap">
               <svg id="donut-sla" width="110" height="110" viewBox="0 0 110 110"></svg>
@@ -2486,6 +2567,37 @@ html, body {
               <svg id="donut-zone" width="110" height="110" viewBox="0 0 110 110"></svg>
               <div class="donut-legend" id="legend-zone"></div>
             </div>
+          </div>
+        </div>
+        <div class="chart-card" id="zone-trend-card">
+          <div class="zt-head">
+            <div>
+              <div class="zt-title">📈 Zone Performance Trend</div>
+              <div class="zt-subtitle" id="zt-subtitle">—</div>
+            </div>
+            <div class="zt-controls">
+              <div class="zt-seg">
+                <button id="zt-btn-wow" onclick="setZtMode('weekly')">WoW</button>
+                <button id="zt-btn-mom" class="active" onclick="setZtMode('monthly')">MoM</button>
+              </div>
+              <select class="zt-select" id="zt-range" onchange="setZtRange(this.value)"></select>
+              <div class="zt-save">
+                <button class="export-btn" id="zt-save-btn" onclick="toggleZtSaveMenu(event)" style="padding: 6px 12px; font-size: 11px;">📷 Save Image ▾</button>
+                <div class="zt-save-menu" id="zt-save-menu">
+                  <button onclick="saveZoneTrendImage('full')">Full section<span>Title, insights &amp; charts</span></button>
+                  <button onclick="saveZoneTrendImage('charts')">Charts only<span>Title &amp; zone line charts</span></button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="zt-insights" id="zt-insights"></div>
+          <div id="zt-body"></div>
+          <div class="zt-legend">
+            <span><b style="background:#DCFCE7;color:#15803D;padding:1px 5px;border-radius:4px;font-size:9px">▲/▼</b> change in the latest period vs the one before (green = better, red = worse)</span>
+            <span><svg width="22" height="6"><line x1="0" y1="3" x2="22" y2="3" stroke="#64748B" stroke-width="1.4" stroke-dasharray="2 3" opacity=".6"/></svg> dotted line = running average (volume-weighted, cumulative)</span>
+            <span><svg width="10" height="10"><circle cx="5" cy="5" r="4" fill="#64748B"/></svg> solid dot = latest period</span>
+            <span><svg width="10" height="10"><circle cx="5" cy="5" r="3.5" fill="#fff" stroke="#64748B" stroke-dasharray="2 2" opacity=".5"/></svg> faded dashed dot = low volume (&lt; 20 orders)</span>
+            <span>O2D is calculated on delivered orders only</span>
           </div>
         </div>
         <div class="chart-card" style="margin-top: 14px;">
@@ -2693,12 +2805,7 @@ html, body {
               </div>
             </div>
             <div class="ai-head-r">
-              <select class="ai-model-select ai-provider-select" id="ai-provider" title="AI provider">
-                <option value="gemini">Gemini</option>
-                <option value="openai">OpenAI</option>
-                <option value="claude">Claude</option>
-              </select>
-              <select class="ai-model-select" id="ai-model" title="AI model"></select>
+              <select class="ai-model-select" id="ai-model" title="Gemini model"></select>
               <span class="ai-status" id="ai-status"><span class="dot"></span><span id="ai-status-text">Checking&hellip;</span></span>
               <button class="ai-gear" onclick="aiOpenSettings()" title="AI settings &mdash; API key, connection">&#9881;</button>
             </div>
@@ -2736,15 +2843,6 @@ html, body {
           </div>
 
           <div class="ai-field">
-            <label for="ai-set-provider">AI provider</label>
-            <select id="ai-set-provider" class="ai-inp" onchange="aiRenderProviderSettings()">
-              <option value="gemini">Google Gemini</option>
-              <option value="openai">OpenAI</option>
-              <option value="claude">Anthropic Claude</option>
-            </select>
-          </div>
-
-          <div class="ai-field">
             <label for="ai-set-mode">Connection</label>
             <select id="ai-set-mode" class="ai-inp">
               <option value="auto">Auto &mdash; use the local proxy if it is running, otherwise my key</option>
@@ -2754,7 +2852,7 @@ html, body {
           </div>
 
           <div class="ai-field">
-            <label for="ai-set-key" id="ai-set-key-label">Gemini API key</label>
+            <label for="ai-set-key">Gemini API key</label>
             <div class="ai-keyrow">
               <input type="password" id="ai-set-key" class="ai-inp" placeholder="Paste your Gemini API key" autocomplete="off" spellcheck="false">
               <button class="ai-btn ghost" onclick="aiToggleKeyVisible()" title="Show / hide">&#128065;</button>
@@ -3139,6 +3237,297 @@ function renderOvTrend() {
       maxT: m.weekMap[w].maxT
     })));
   }
+}
+
+// ══════════════════════════════════════════════════════════
+// ZONE PERFORMANCE TREND (Zones tab — WoW / MoM line charts)
+// ══════════════════════════════════════════════════════════
+let _ztMode = 'monthly';
+let _ztRange = 'all';
+let _ztSvgSeq = 0;
+const ZT_LOW_VOL = 20;
+const ZT_METRICS = [
+  { k:'o2d', title:'Order to Delivery (Days)', sub:'Avg O2D · lower is better', short:'Avg O2D', color:'#16A34A', lowerBetter:true, minRange:0.6,
+    fmt:v=>v.toFixed(1)+'d', dFmt:d=>Math.abs(d).toFixed(1)+'d' },
+  { k:'del', title:'Delivery Rate %', sub:'Delivered ÷ Orders · higher is better', short:'Delivery rate', color:'#1565D8', lowerBetter:false, minRange:2,
+    fmt:v=>v.toFixed(1)+'%', dFmt:d=>Math.abs(d).toFixed(1)+'pp' },
+  { k:'rto', title:'RTO Rate %', sub:'RTO ÷ Orders · lower is better', short:'RTO rate', color:'#DC2626', lowerBetter:true, minRange:2,
+    fmt:v=>v.toFixed(1)+'%', dFmt:d=>Math.abs(d).toFixed(1)+'pp' },
+];
+const ZT_MT = Object.fromEntries(ZT_METRICS.map(mt => [mt.k, mt]));
+
+function _ztAddBucket(map, zone, period, isDel, isRto, o2dW, oc) {
+  if (!period || period === '-') return;
+  const zm = map[zone] || (map[zone] = {});
+  const b = zm[period] || (zm[period] = { total:0, delivered:0, rto:0, totalO2D:0, totalOrderCount:0 });
+  b.total++;
+  if (isDel) { b.delivered++; b.totalO2D += o2dW; b.totalOrderCount += oc; }
+  if (isRto) b.rto++;
+}
+
+function _ztSum(buckets) {
+  const s = { total:0, delivered:0, rto:0, totalO2D:0, totalOrderCount:0 };
+  buckets.forEach(b => { if (!b) return; s.total += b.total; s.delivered += b.delivered; s.rto += b.rto; s.totalO2D += b.totalO2D; s.totalOrderCount += b.totalOrderCount; });
+  return s;
+}
+
+// Same formulas as the Zones performance table: O2D on delivered orders, rates on all orders
+function _ztVal(b, k) {
+  if (!b) return null;
+  if (k === 'o2d') return b.totalOrderCount > 0 ? b.totalO2D / b.totalOrderCount : null;
+  if (!b.total) return null;
+  return (k === 'del' ? b.delivered : b.rto) / b.total * 100;
+}
+
+function _ztPeriodLabel(p, weekly) {
+  const s = String(p), up = s.toUpperCase();
+  const M = ['JAN','FEB','MAR','APR','MAY','JUN','JUL','AUG','SEP','OCT','NOV','DEC'];
+  const mi = M.findIndex(x => up.includes(x));
+  const mon = mi >= 0 ? M[mi][0] + M[mi].slice(1).toLowerCase() : '';
+  if (!weekly) return mon || s;
+  const wn = up.match(/WEEK\s?(\d+)/)?.[1] || up.match(/\bWK?\s?(\d+)/)?.[1];
+  return wn ? (mon ? `${mon} W${wn}` : `W${wn}`) : s;
+}
+
+function _ztZoneParts(k) {
+  const parts = String(getZoneDisplayName(k)).split(' - ');
+  const sub = parts.slice(1).join(' - ').toLowerCase().replace(/(^|[\s\/])\w/g, c => c.toUpperCase());
+  return { name: parts[0], sub };
+}
+
+// Change of the latest period vs the one before, on the displayed (1-decimal) values
+function _ztDelta(mt, vals, unit) {
+  const n = vals.length, cur = vals[n-1], prev = n > 1 ? vals[n-2] : null;
+  if (cur == null || prev == null) return `<span class="zt-chip flat">— ${unit}</span>`;
+  const d = +cur.toFixed(1) - +prev.toFixed(1);
+  if (Math.abs(d) < 0.05) return `<span class="zt-chip flat">→ flat ${unit}</span>`;
+  const good = mt.lowerBetter ? d < 0 : d > 0;
+  return `<span class="zt-chip ${good ? 'good' : 'bad'}">${d > 0 ? '▲' : '▼'} ${mt.dFmt(d)} ${unit}</span>`;
+}
+
+function _ztChart(mt, vals, avgs, vols, labels, tipHead) {
+  const W = 360, H = 122, L = 16, R = 56, T = 20, B = 20;
+  const n = vals.length, gid = 'zt-g-' + (++_ztSvgSeq);
+  const pool = vals.concat(avgs).filter(v => v != null);
+  if (!pool.length) return `<div class="zt-empty">No data</div>`;
+  const lo0 = Math.min(...pool), hi0 = Math.max(...pool);
+  const span = Math.max(hi0 - lo0, mt.minRange), mid = (hi0 + lo0) / 2;
+  const lo = mid - span * 0.68, hi = mid + span * 0.68;
+  const x = i => n === 1 ? (L + W - R) / 2 : L + i * (W - L - R) / (n - 1);
+  const y = v => T + (1 - (v - lo) / (hi - lo)) * (H - T - B);
+  const base = H - B;
+  const path = arr => { let d = '', pen = false; arr.forEach((v, i) => { if (v == null) { pen = false; return; } d += `${pen ? 'L' : 'M'}${x(i).toFixed(1)} ${y(v).toFixed(1)} `; pen = true; }); return d; };
+
+  const idx = vals.map((v, i) => v == null ? null : i).filter(i => i != null);
+  const lastI = idx[idx.length - 1];
+  const area = idx.length > 1
+    ? `M${x(idx[0]).toFixed(1)} ${base} ` + idx.map(i => `L${x(i).toFixed(1)} ${y(vals[i]).toFixed(1)}`).join(' ') + ` L${x(lastI).toFixed(1)} ${base} Z`
+    : '';
+
+  // Point labels: all when few periods, else first / last / min / max
+  let showIdx;
+  if (n <= 8) showIdx = new Set(idx);
+  else { const byV = [...idx].sort((a, b) => vals[a] - vals[b]); showIdx = new Set([idx[0], lastI, byV[0], byV[byV.length - 1]]); }
+
+  const step = n <= 8 ? 1 : Math.ceil(n / 8);
+  const xLabels = labels.map((lb, i) => {
+    const show = i === n - 1 || (i % step === 0 && (n - 1 - i) >= step * 0.6);
+    if (!show) return '';
+    const anchor = n > 1 && i === 0 ? 'start' : (n > 1 && i === n - 1 ? 'end' : 'middle');
+    const xx = anchor === 'start' ? x(i) - 6 : anchor === 'end' ? x(i) + 6 : x(i);
+    return `<text x="${xx.toFixed(1)}" y="${H - 4}" text-anchor="${anchor}" font-size="9" font-weight="600" fill="#94A3B8">${lb}</text>`;
+  }).join('');
+
+  const dots = idx.map(i => {
+    const px = x(i).toFixed(1), py = y(vals[i]).toFixed(1);
+    const low = vols[i] < ZT_LOW_VOL, last = i === lastI;
+    return last && !low
+      ? `<circle cx="${px}" cy="${py}" r="4.3" fill="${mt.color}" stroke="#fff" stroke-width="1.5"/>`
+      : `<circle cx="${px}" cy="${py}" r="3.4" fill="#fff" stroke="${mt.color}" stroke-width="1.8"${low ? ' stroke-dasharray="2 2" opacity=".5"' : ''}/>`;
+  }).join('');
+
+  const ptLabels = idx.filter(i => showIdx.has(i)).map(i => {
+    const py = y(vals[i]);
+    const ly = py - 8 < 10 ? py + 15 : py - 8;
+    return `<text x="${x(i).toFixed(1)}" y="${ly.toFixed(1)}" text-anchor="middle" font-size="9.5" font-weight="${i === lastI ? 800 : 700}" fill="${mt.color}"${vols[i] < ZT_LOW_VOL ? ' opacity=".55"' : ''}>${mt.fmt(vals[i])}</text>`;
+  }).join('');
+
+  // Running average: faint dotted line + end label in the right gutter
+  const lastAvgI = avgs.map((v, i) => v == null ? null : i).filter(i => i != null).pop();
+  const avgEnd = lastAvgI != null
+    ? `<text x="${(x(lastAvgI) + 10).toFixed(1)}" y="${(y(avgs[lastAvgI]) + 3).toFixed(1)}" font-size="8.5" font-weight="600" fill="${mt.color}" opacity=".6">avg ${mt.fmt(avgs[lastAvgI])}</text>`
+    : '';
+
+  const colW = n > 1 ? (W - L - R) / (n - 1) : (W - L - R);
+  const hits = vals.map((v, i) => {
+    const low = vols[i] < ZT_LOW_VOL;
+    const tip = `<strong>${tipHead} · ${labels[i]}</strong>\n${mt.short}: ${v == null ? '—' : mt.fmt(v)}\nRunning avg: ${avgs[i] == null ? '—' : mt.fmt(avgs[i])}\nOrders: ${(vols[i] || 0).toLocaleString()}${low ? ' (low volume)' : ''}`;
+    return `<rect x="${(x(i) - colW / 2).toFixed(1)}" y="0" width="${colW.toFixed(1)}" height="${H}" fill="#000" fill-opacity="0" data-tip="${tip}"/>`;
+  }).join('');
+
+  return `<svg class="zt-svg" viewBox="0 0 ${W} ${H}" font-family="Outfit, 'Segoe UI', Arial, sans-serif">
+    <defs><linearGradient id="${gid}" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="${mt.color}" stop-opacity=".22"/><stop offset="1" stop-color="${mt.color}" stop-opacity="0"/></linearGradient></defs>
+    <line x1="${L}" y1="${base}" x2="${W - R}" y2="${base}" stroke="#E2E8F0" stroke-width="1"/>
+    ${area ? `<path d="${area}" fill="url(#${gid})"/>` : ''}
+    <path d="${path(avgs)}" fill="none" stroke="${mt.color}" stroke-width="1.4" stroke-dasharray="2 3" stroke-linecap="round" opacity=".42"/>
+    <path d="${path(vals)}" fill="none" stroke="${mt.color}" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"/>
+    ${dots}${ptLabels}${avgEnd}${xLabels}${hits}
+  </svg>`;
+}
+
+function _ztInsights(rows, overall, labels, unit) {
+  const n = labels.length;
+  const card = (cls, k, v) => `<div class="zt-ins ${cls}"><div class="zt-ins-k">${k}</div><div class="zt-ins-v">${v}</div></div>`;
+  if (n < 2) return card('', 'Need more history', `Only one ${unit === 'WoW' ? 'week' : 'month'} in view — widen the date range to compare trends.`);
+  const at = (r, k, i) => _ztVal(r.buckets[i], k);
+  const delta = (r, k) => { const a = at(r, k, n-1), b = at(r, k, n-2); return a == null || b == null ? null : +a.toFixed(1) - +b.toFixed(1); };
+  const signed = (d, u) => `${d >= 0 ? '+' : '−'}${Math.abs(d).toFixed(1)}${u}`;
+  const fmt = (k, v) => v == null ? '—' : ZT_MT[k].fmt(v);
+
+  const net = [['del','Delivery','pp'], ['rto','RTO','pp'], ['o2d','O2D','d']].map(([k, lbl, u]) => {
+    const d = delta(overall, k);
+    return `${lbl} <b>${fmt(k, at(overall, k, n-1))}</b>${d == null ? '' : ` (${signed(d, u)})`}`;
+  }).join(' · ');
+
+  // Only compare zones with enough volume in both periods to avoid noisy swings
+  const elig = rows.filter(r => (r.buckets[n-1]?.total || 0) >= ZT_LOW_VOL && (r.buckets[n-2]?.total || 0) >= ZT_LOW_VOL);
+  const pick = (k, dir) => elig.map(r => ({ r, d: delta(r, k) }))
+    .filter(o => o.d != null && (dir > 0 ? o.d >= 0.1 : o.d <= -0.1))
+    .sort((a, b) => dir > 0 ? b.d - a.d : a.d - b.d)[0];
+  const rtoUp = pick('rto', 1), rtoDn = pick('rto', -1), delDn = pick('del', -1), delUp = pick('del', 1);
+
+  const out = [card('', `Network · ${labels[n-1]} vs ${labels[n-2]}`, net)];
+  out.push(rtoUp
+    ? card('bad', 'RTO Watch', `<b>${rtoUp.r.name}</b> RTO up ${signed(rtoUp.d, 'pp')} to ${fmt('rto', at(rtoUp.r, 'rto', n-1))} ${unit}.`)
+    : card('good', 'RTO Watch', `No zone saw RTO rise ${unit}.`));
+  out.push(rtoDn
+    ? card('good', 'RTO Improver', `<b>${rtoDn.r.name}</b> RTO down ${Math.abs(rtoDn.d).toFixed(1)}pp to ${fmt('rto', at(rtoDn.r, 'rto', n-1))} ${unit}.`)
+    : card('warn', 'RTO Improver', `No zone reduced RTO ${unit}.`));
+  out.push(delDn
+    ? card('bad', 'Delivery Rate Drop', `<b>${delDn.r.name}</b> delivery rate fell ${Math.abs(delDn.d).toFixed(1)}pp to ${fmt('del', at(delDn.r, 'del', n-1))} ${unit}.`)
+    : delUp
+      ? card('good', 'Delivery Rate Gain', `<b>${delUp.r.name}</b> delivery rate up ${delUp.d.toFixed(1)}pp to ${fmt('del', at(delUp.r, 'del', n-1))} ${unit}.`)
+      : card('good', 'Delivery Rate', `Delivery rate held steady across zones ${unit}.`));
+
+  const slow = rows.filter(r => (r.buckets[n-1]?.total || 0) >= ZT_LOW_VOL && at(r, 'o2d', n-1) != null)
+    .sort((a, b) => at(b, 'o2d', n-1) - at(a, 'o2d', n-1))[0];
+  if (slow) {
+    const d = delta(slow, 'o2d');
+    out.push(card('warn', `Slowest Zone · ${labels[n-1]}`, `<b>${slow.name}</b> at ${fmt('o2d', at(slow, 'o2d', n-1))} O2D vs network ${fmt('o2d', at(overall, 'o2d', n-1))}${d == null ? '' : ` (${signed(d, 'd')} ${unit})`}.`));
+  }
+  return out.join('');
+}
+
+function toggleZtSaveMenu(e) {
+  e.stopPropagation();
+  _id('zt-save-menu')?.classList.toggle('open');
+}
+document.addEventListener('click', e => {
+  if (!e.target.closest('.zt-save')) _id('zt-save-menu')?.classList.remove('open');
+});
+
+// Save the Zone Performance Trend card as PNG. 'charts' leaves out the insight cards.
+async function saveZoneTrendImage(mode) {
+  _id('zt-save-menu')?.classList.remove('open');
+  const card = _id('zone-trend-card');
+  if (!card || !_id('zt-body')?.querySelector('.zt-grid')) { alert('Load data first — no zone trend to save.'); return; }
+  if (typeof html2canvas === 'undefined') { alert('Image export is still loading — please try again in a moment.'); return; }
+  const btn = _id('zt-save-btn'), orig = btn.innerHTML;
+  btn.innerHTML = '⌛ Saving…'; btn.disabled = true;
+  try {
+    const canvas = await html2canvas(card, {
+      scale: 2,
+      backgroundColor: '#ffffff',
+      logging: false,
+      useCORS: true,
+      ignoreElements: node => node.classList?.contains('zt-controls'),
+      onclone: doc => {
+        // Sticky header would be captured at its scrolled offset — flatten it for the snapshot
+        doc.querySelectorAll('.zt-hcell').forEach(h => { h.style.position = 'static'; h.style.boxShadow = 'none'; });
+        if (mode === 'charts') { const ins = doc.getElementById('zt-insights'); if (ins) ins.style.display = 'none'; }
+      }
+    });
+    const blob = await new Promise(res => canvas.toBlob(res, 'image/png'));
+    if (!blob) throw new Error('Canvas export failed');
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `Zone_Performance_Trend_${_ztMode === 'weekly' ? 'WoW' : 'MoM'}${mode === 'charts' ? '_Charts' : ''}_${new Date().toISOString().slice(0, 10)}.png`;
+    document.body.appendChild(a); a.click(); a.remove();
+    setTimeout(() => URL.revokeObjectURL(url), 1000);
+  } catch (err) {
+    console.error('Zone trend image export failed:', err);
+    alert('Could not save the image: ' + err.message);
+  } finally {
+    btn.innerHTML = orig; btn.disabled = false;
+  }
+}
+
+function setZtMode(mode) { _ztMode = mode; _ztRange = 'all'; renderZoneTrend(); }
+function setZtRange(v) { _ztRange = v; renderZoneTrend(); }
+
+function renderZoneTrend() {
+  const m = window._zoneTrendMetrics, host = _id('zt-body');
+  if (!m || !host) return;
+  const weekly = _ztMode === 'weekly';
+  const unit = weekly ? 'WoW' : 'MoM', pUnit = weekly ? 'weeks' : 'months';
+  _id('zt-btn-wow').classList.toggle('active', weekly);
+  _id('zt-btn-mom').classList.toggle('active', !weekly);
+  _id('zt-range').innerHTML = ['all'].concat(weekly ? ['4','8','12'] : ['3','6','12'])
+    .map(v => `<option value="${v}"${v === _ztRange ? ' selected' : ''}>${v === 'all' ? 'All' : `Last ${v} ${pUnit}`}</option>`).join('');
+
+  const src = (weekly ? m.zoneWeekMap : m.zoneMonthMap) || {};
+  const zoneKeys = Object.keys(src).filter(z => z !== '-').sort(sortZones);
+  let periods = [...new Set(zoneKeys.flatMap(z => Object.keys(src[z])))].sort(weekly ? sortWeeks : sortMonths);
+  if (_ztRange !== 'all') periods = periods.slice(-parseInt(_ztRange, 10));
+  if (!zoneKeys.length || !periods.length) {
+    host.innerHTML = '<div class="zt-empty">No zone / period data in the current selection.</div>';
+    _id('zt-insights').innerHTML = '';
+    _id('zt-subtitle').textContent = '—';
+    return;
+  }
+
+  const labels = periods.map(p => _ztPeriodLabel(p, weekly));
+  const rows = zoneKeys.map(z => ({ key: z, ..._ztZoneParts(z), buckets: periods.map(p => src[z][p] || null) }))
+    .filter(r => r.buckets.some(Boolean));
+  const overall = { key: '__all', name: 'Overall Summary', sub: '', isSum: true, buckets: periods.map((p, i) => _ztSum(rows.map(r => r.buckets[i]))) };
+  const grandTotal = _ztSum(overall.buckets).total;
+
+  _id('zt-subtitle').textContent = `${weekly ? 'Week-on-week' : 'Month-on-month'} view · ${labels[0]}${labels.length > 1 ? ' to ' + labels[labels.length - 1] : ''} · ${labels.length} ${labels.length === 1 ? pUnit.slice(0, -1) : pUnit}`;
+  _id('zt-insights').innerHTML = _ztInsights(rows, overall, labels, unit);
+
+  _ztSvgSeq = 0;
+  const fmt = (k, v) => v == null ? '—' : ZT_MT[k].fmt(v);
+  const rowHtml = (r, last) => {
+    const agg = _ztSum(r.buckets);
+    const vols = r.buckets.map(b => b ? b.total : 0);
+    const cls = (last ? ' zt-last' : '') + (r.isSum ? ' zt-sumrow' : '');
+    const meta = r.isSum
+      ? `${agg.total.toLocaleString()} orders · all zones`
+      : `${agg.total.toLocaleString()} orders · ${grandTotal ? (agg.total / grandTotal * 100).toFixed(1) : 0}% mix`;
+    const card = `<div class="zt-zone${cls}"><div class="zt-zcard">
+      <div class="zt-zname">${r.name}</div>${r.sub ? `<div class="zt-zsub">${r.sub}</div>` : ''}
+      <div class="zt-zmeta">${meta}</div>
+      <div class="zt-pills">
+        <div class="zt-pill o2d"><b>${fmt('o2d', _ztVal(agg, 'o2d'))}</b><span>Avg O2D</span></div>
+        <div class="zt-pill del"><b>${fmt('del', _ztVal(agg, 'del'))}</b><span>Delivered</span></div>
+        <div class="zt-pill rto"><b>${fmt('rto', _ztVal(agg, 'rto'))}</b><span>RTO</span></div>
+      </div></div></div>`;
+    const cells = ZT_METRICS.map(mt => {
+      const vals = r.buckets.map(b => _ztVal(b, mt.k));
+      const avgs = r.buckets.map((b, i) => _ztVal(_ztSum(r.buckets.slice(0, i + 1)), mt.k));
+      return `<div class="zt-cell zt-c-${mt.k}${cls}">
+        <div class="zt-cell-lbl">${mt.title}</div>
+        <div class="zt-cell-top"><div><span class="zt-big" style="color:${mt.color}">${fmt(mt.k, vals[vals.length - 1])}</span><span class="zt-latest">LATEST</span></div>${_ztDelta(mt, vals, unit)}</div>
+        ${_ztChart(mt, vals, avgs, vols, labels, r.name)}
+      </div>`;
+    }).join('');
+    return card + cells;
+  };
+
+  const head = `<div class="zt-hcell zt-h0">Zone · Period KPIs</div>` +
+    ZT_METRICS.map(mt => `<div class="zt-hcell zt-h-${mt.k}"><div class="zt-h-t">${mt.title}</div><div class="zt-h-s">${mt.sub}</div></div>`).join('');
+  host.innerHTML = `<div class="zt-grid">${head}${rows.map(r => rowHtml(r, false)).join('')}${rowHtml(overall, true)}</div>`;
 }
 
 let _delPerfMode = 'weekly';
@@ -3762,6 +4151,7 @@ function compute(raw, filters) {
   const _CITY_KEYS    = ['Shipping Address City','City','city','Delivery City','CITY'];
 
   const rem = {}, courierMap = {}, zoneMap = {}, facilityMap = {}, weekMap = {}, monthlyMap = {}, attemptMap = {}, dayMap = {}, stateMap = {}, cityMap = {};
+  const zoneWeekMap = {}, zoneMonthMap = {}; // zone -> period -> bucket (Zone Performance Trend)
   let delivered = 0, rto = 0, lost = 0, inTransit = 0, cod = 0, nddCount = 0;
   let crossDist = 0, crossKnown = 0; // Facility cross-distribution (p_cross_distribution = Yes/No)
   let sumX_O2D = 0, sumX_O2S = 0, sumX_P2D = 0, totalDeliveredOrderCount = 0;
@@ -3817,6 +4207,8 @@ function compute(raw, filters) {
     if (isDelivered) { zoneMap[zone].delivered++; zoneMap[zone].totalO2D+=o2d*ocCount; zoneMap[zone].totalP2D+=p2d*ocCount; zoneMap[zone].totalOrderCount+=ocCount; }
     if (isRTO)    zoneMap[zone].rto++;
     if (isBreach) zoneMap[zone].breaches++;
+    _ztAddBucket(zoneWeekMap,  zone, week,  isDelivered, isRTO, o2d*ocCount, ocCount);
+    _ztAddBucket(zoneMonthMap, zone, month, isDelivered, isRTO, o2d*ocCount, ocCount);
 
     // facility map
     if (!facilityMap[fac]) facilityMap[fac] = {total:0,delivered:0,rto:0,revenue:facRevMap[fac]||0,breaches:0,totalO2D:0,totalO2S:0,totalOrderCount:0,crossDist:0};
@@ -3875,7 +4267,7 @@ function compute(raw, filters) {
 
   const result = { total, items:data.length, revenue, delivered, rto, lost, inTransit, others,
     delRate, rtoRate, avgO2D, avgO2S, avgP2D, tatPct, withinTAT, breachedTAT,
-    courierMap, zoneMap, facilityMap, weekMap, monthlyMap, dayMap, stateMap, cityMap, productMap, cod, prepaid, attemptMap, nddCount,
+    courierMap, zoneMap, zoneWeekMap, zoneMonthMap, facilityMap, weekMap, monthlyMap, dayMap, stateMap, cityMap, productMap, cod, prepaid, attemptMap, nddCount,
     crossDist, crossKnown, crossDistRate };
   _computeCache = { key: cacheKey, result };
   return result;
@@ -4311,6 +4703,8 @@ function renderAll() {
   hbars('zone-bars', zones.map(([k,v],i)=>({l:getZoneDisplayName(k), v:v.delivered, c:ZONE_COLORS[i%ZONE_COLORS.length], pct:v.total?((v.delivered/v.total)*100).toFixed(1):0})), maxZone);
   drawDonut('donut-zone', zones.map(([k,v],i)=>({l:getZoneDisplayName(k), v:v.total, c:ZONE_COLORS[i%ZONE_COLORS.length]})));
   renderLegend('legend-zone', zones.map(([k,v],i)=>({l:getZoneDisplayName(k), v:v.total, c:ZONE_COLORS[i%ZONE_COLORS.length]})), m.total);
+  window._zoneTrendMetrics = m;
+  renderZoneTrend();
 
   // Zones performance table
   const zpTable = _id('zone-performance-table');
@@ -7215,15 +7609,11 @@ document.addEventListener('DOMContentLoaded', async () => {
 // ══════════════════════════════════════════════════════════
 const AI_PROXY_DEFAULT = 'http://127.0.0.1:8765';
 const AI_GEMINI_BASE   = 'https://generativelanguage.googleapis.com/v1beta/models';
-const AI_PROVIDER_DEFAULTS = {
-  gemini: { label:'Gemini', keyLabel:'Gemini API key', placeholder:'Paste your Gemini API key', models:['gemini-3.7-flash','gemini-3.6-flash','gemini-3.5-flash','gemini-3.5-flash-lite'] },
-  openai: { label:'OpenAI', keyLabel:'OpenAI API key', placeholder:'Paste your OpenAI API key', models:['gpt-4o-mini','gpt-4.1-mini','gpt-4o'] },
-  claude: { label:'Claude', keyLabel:'Anthropic API key', placeholder:'Paste your Anthropic API key', models:['claude-3-5-haiku-latest','claude-3-5-sonnet-latest','claude-3-7-sonnet-latest'] },
-};
+const AI_MODELS_FALLBACK = ['gemini-3.7-flash','gemini-3.6-flash','gemini-3.5-flash','gemini-3.5-flash-lite'];
 const AI_MAX_TOOL_HOPS = 6;
 
-let AI_CFG = { provider:'gemini', mode:'auto', proxy:AI_PROXY_DEFAULT, keys:{}, model:'' };
-let AI_MODELS  = AI_PROVIDER_DEFAULTS.gemini.models.slice();
+let AI_CFG = { mode:'auto', proxy:AI_PROXY_DEFAULT, key:'', model:'' };
+let AI_MODELS  = AI_MODELS_FALLBACK.slice();
 let AI_TRANSPORT = null;   // 'proxy' | 'direct' | null
 let AI_BUSY    = false;
 let AI_HISTORY = [];       // Gemini "contents" — includes tool calls + results
@@ -7234,15 +7624,11 @@ let AI_PENDING_TAB  = null;
 function aiLoadCfg() {
   try {
     const s = JSON.parse(localStorage.getItem('pp_ai_cfg') || '{}');
-    AI_CFG = Object.assign({ provider:'gemini', mode:'auto', proxy:AI_PROXY_DEFAULT, keys:{}, model:'' }, s || {});
-    if (!AI_CFG.keys || typeof AI_CFG.keys !== 'object') AI_CFG.keys = {};
-    if (AI_CFG.key && !AI_CFG.keys.gemini) AI_CFG.keys.gemini = AI_CFG.key;
+    AI_CFG = Object.assign({ mode:'auto', proxy:AI_PROXY_DEFAULT, key:'', model:'' }, s || {});
   } catch (e) { /* corrupt or blocked storage — keep defaults */ }
   if (!AI_CFG.proxy) AI_CFG.proxy = AI_PROXY_DEFAULT;
   return AI_CFG;
 }
-function aiProvider() { return AI_PROVIDER_DEFAULTS[AI_CFG.provider] || AI_PROVIDER_DEFAULTS.gemini; }
-function aiCurrentKey() { return AI_CFG.keys[AI_CFG.provider] || ''; }
 function aiSaveCfg() {
   try { localStorage.setItem('pp_ai_cfg', JSON.stringify(AI_CFG)); } catch (e) {}
 }
@@ -7686,18 +8072,17 @@ async function aiProbeProxy() {
 
 // Decide how we will reach Gemini, and refresh the status pill.
 async function aiResolveTransport() {
-  const provider = AI_CFG.provider || 'gemini';
   const mode = AI_CFG.mode || 'auto';
   let health = null;
-  if (provider === 'gemini' && (mode === 'proxy' || mode === 'auto')) health = await aiProbeProxy();
+  if (mode === 'proxy' || mode === 'auto') health = await aiProbeProxy();
 
   if (health) {
     AI_TRANSPORT = 'proxy';
     if (Array.isArray(health.models) && health.models.length) AI_MODELS = health.models;
     if (!AI_CFG.model) AI_CFG.model = health.defaultModel || AI_MODELS[0];
-  } else if (mode !== 'proxy' && aiCurrentKey()) {
+  } else if (mode !== 'proxy' && AI_CFG.key) {
     AI_TRANSPORT = 'direct';
-    AI_MODELS = aiProvider().models.slice();
+    AI_MODELS = AI_MODELS_FALLBACK.slice();
     if (!AI_CFG.model) AI_CFG.model = AI_MODELS[0];
   } else {
     AI_TRANSPORT = null;
@@ -7707,48 +8092,9 @@ async function aiResolveTransport() {
   return AI_TRANSPORT;
 }
 
-function aiOpenAIRequest(body) {
-  const messages = [{ role:'system', content:(body.systemInstruction && body.systemInstruction.parts || []).map(p => p.text).join('\n') }];
-  const history = AI_HISTORY.length ? AI_HISTORY : (body.contents || []);
-  history.forEach(turn => {
-    if (turn.role === 'model') {
-      messages.push({ role:'assistant', content:turn.parts.filter(p => p.text).map(p => p.text).join('') || null,
-        tool_calls:turn.parts.filter(p => p.functionCall).map(p => ({ id:p.functionCall.id || 'call_' + Math.random().toString(36).slice(2), type:'function', function:{ name:p.functionCall.name, arguments:JSON.stringify(p.functionCall.args || {}) } })) });
-    } else if (turn.role === 'user' && turn.parts.some(p => p.functionResponse)) {
-      turn.parts.forEach(p => { const f = p.functionResponse; messages.push({ role:'tool', tool_call_id:f.id || f.name, content:JSON.stringify(f.response) }); });
-    } else messages.push({ role:'user', content:turn.parts.map(p => p.text || '').join('') });
-  });
-  return { model:AI_CFG.model, messages, temperature:body.generationConfig.temperature, max_tokens:body.generationConfig.maxOutputTokens,
-    tools:[{ type:'function', functionDeclarations:AI_TOOLS }].map(t => ({ type:'function', function:{ name:t.functionDeclarations[0].name, description:t.functionDeclarations[0].description, parameters:t.functionDeclarations[0].parameters } })) };
-}
-
-function aiClaudeRequest(body) {
-  const messages = [];
-  const history = AI_HISTORY.length ? AI_HISTORY : (body.contents || []);
-  history.forEach(turn => {
-    if (turn.role === 'model') messages.push({ role:'assistant', content:turn.parts.flatMap(p => p.text ? [{ type:'text', text:p.text }] : p.functionCall ? [{ type:'tool_use', id:p.functionCall.id || 'tool_' + Math.random().toString(36).slice(2), name:p.functionCall.name, input:p.functionCall.args || {} }] : []) });
-    else if (turn.role === 'user' && turn.parts.some(p => p.functionResponse)) messages.push({ role:'user', content:turn.parts.map(p => ({ type:'tool_result', tool_use_id:p.functionResponse.id || p.functionResponse.name, content:JSON.stringify(p.functionResponse.response) })) });
-    else messages.push({ role:'user', content:turn.parts.map(p => p.text || '').join('') });
-  });
-  return { model:AI_CFG.model, max_tokens:body.generationConfig.maxOutputTokens, temperature:body.generationConfig.temperature,
-    system:(body.systemInstruction && body.systemInstruction.parts || []).map(p => p.text).join('\n'), messages,
-    tools:AI_TOOLS.map(t => ({ name:t.name, description:t.description, input_schema:t.parameters })) };
-}
-
-function aiNormalizeProviderResponse(j) {
-  if (AI_CFG.provider === 'openai') {
-    const m = (j.choices || [])[0] && (j.choices || [])[0].message;
-    return { candidates:[{ content:{ parts:[...(m && m.content ? [{text:m.content}] : []), ...((m && m.tool_calls) || []).map(c => ({ functionCall:{ id:c.id, name:c.function.name, args:JSON.parse(c.function.arguments || '{}') } }))] } }] };
-  }
-  if (AI_CFG.provider === 'claude') {
-    return { candidates:[{ content:{ parts:(j.content || []).map(c => c.type === 'text' ? {text:c.text} : {functionCall:{id:c.id,name:c.name,args:c.input || {}}}) } }] };
-  }
-  return j;
-}
-
-// One round-trip over whichever transport is live.
+// One Gemini round-trip over whichever transport is live.
 async function aiCallGemini(body) {
-  if (AI_TRANSPORT === 'proxy' && AI_CFG.provider === 'gemini') {
+  if (AI_TRANSPORT === 'proxy') {
     const r = await fetch(AI_CFG.proxy.replace(/\/$/, '') + '/chat', {
       method:'POST', headers:{'Content-Type':'application/json'},
       body: JSON.stringify({ ...body, model: AI_CFG.model }),
@@ -7758,7 +8104,7 @@ async function aiCallGemini(body) {
     return j;
   }
 
-  if (AI_TRANSPORT === 'direct' && AI_CFG.provider === 'gemini') {
+  if (AI_TRANSPORT === 'direct') {
     // Try the chosen model, then walk the list — the free tier caps requests
     // per model per day, so a fallback multiplies the usable budget.
     const chain = [AI_CFG.model].concat(AI_MODELS.filter(m => m !== AI_CFG.model));
@@ -7766,7 +8112,7 @@ async function aiCallGemini(body) {
     for (const model of chain) {
       const r = await fetch(AI_GEMINI_BASE + '/' + model + ':generateContent', {
         method:'POST',
-        headers:{ 'Content-Type':'application/json', 'x-goog-api-key': aiCurrentKey() },
+        headers:{ 'Content-Type':'application/json', 'x-goog-api-key': AI_CFG.key },
         body: JSON.stringify(body),
       });
       const j = await r.json().catch(() => ({}));
@@ -7777,25 +8123,7 @@ async function aiCallGemini(body) {
     throw new Error(aiExplainError(last && last.body, last && last.status));
   }
 
-  if (AI_TRANSPORT === 'direct' && (AI_CFG.provider === 'openai' || AI_CFG.provider === 'claude')) {
-    const openai = AI_CFG.provider === 'openai';
-    const url = openai ? 'https://api.openai.com/v1/chat/completions' : 'https://api.anthropic.com/v1/messages';
-    const headers = openai
-      ? { 'Content-Type':'application/json', Authorization:'Bearer ' + aiCurrentKey() }
-      : { 'Content-Type':'application/json', 'x-api-key':aiCurrentKey(), 'anthropic-version':'2023-06-01', 'anthropic-dangerous-direct-browser-access':'true' };
-    const r = await fetch(url, { method:'POST', headers, body:JSON.stringify(openai ? aiOpenAIRequest(body) : aiClaudeRequest(body)) });
-    const j = await r.json().catch(() => ({}));
-    if (!r.ok) throw new Error(aiExplainProviderError(j, r.status));
-    return aiNormalizeProviderResponse(j);
-  }
-
   throw new Error('NOT_CONFIGURED');
-}
-
-function aiExplainProviderError(j, status) {
-  const msg = String((j && j.error && (j.error.message || j.error)) || (j && j.message) || '');
-  if (status === 401 || status === 403) return 'That ' + aiProvider().label + ' API key was rejected. Check it in Settings.';
-  return msg || (aiProvider().label + ' request failed (HTTP ' + (status || '?') + ').');
 }
 
 function aiExplainError(j, status) {
@@ -7891,7 +8219,7 @@ async function aiSend(preset) {
   } catch (err) {
     const m = String((err && err.message) || err);
     bot.error = (m === 'NOT_CONFIGURED')
-      ? 'No ' + aiProvider().label + ' connection. Open Settings and paste an API key' + (AI_CFG.provider === 'gemini' ? ' or start the local proxy.' : '.')
+      ? 'No Gemini connection. Open Settings and either paste an API key or start the local proxy.'
       : (/Failed to fetch|NetworkError|Load failed/i.test(m)
           ? 'Could not reach ' + (AI_TRANSPORT === 'proxy' ? 'the local proxy' : 'Gemini') +
             '. ' + (AI_TRANSPORT === 'proxy' ? 'Is the "Start AI Agent" window still open?' : 'Check your connection.')
@@ -8050,16 +8378,16 @@ function aiRenderStatus() {
     aiNotice('');
   } else if (AI_TRANSPORT === 'direct') {
     pill.classList.add('on');  txt.textContent = 'Browser key';
-    pill.title = 'Using the ' + aiProvider().label + ' key saved in this browser (' + aiMaskKey(aiCurrentKey()) + '). It is stored in localStorage, not in the HTML file.';
+    pill.title = 'Using the key saved in this browser (' + aiMaskKey(AI_CFG.key) + '). It is stored in localStorage, not in the HTML file.';
     aiNotice('');
   } else {
     pill.classList.add('off'); txt.textContent = 'Not connected';
-    pill.title = 'No ' + aiProvider().label + ' connection configured.';
+    pill.title = 'No Gemini connection configured.';
     aiNotice('<b>The agent is not connected yet.</b> Pick either route:<br>' +
       '&nbsp;&nbsp;<b>1. Local proxy (recommended)</b> — double-click <code>ai-agent\\Start AI Agent.bat</code> ' +
       'and leave that window open. The key stays server-side.<br>' +
       '&nbsp;&nbsp;<b>2. Your own key</b> — <button class="ai-linkbtn" onclick="aiOpenSettings()" ' +
-      'style="color:#92400E;font-weight:700">open Settings</button> and paste a ' + aiProvider().label + ' API key. ' +
+      'style="color:#92400E;font-weight:700">open Settings</button> and paste a Gemini API key. ' +
       'It is saved in this browser only.');
   }
 }
@@ -8069,29 +8397,8 @@ function aiRenderModels() {
   if (!sel) return;
   sel.innerHTML = AI_MODELS.map(m =>
     '<option value="' + aiEsc(m) + '"' + (m === AI_CFG.model ? ' selected' : '') + '>' +
-    aiEsc(m.replace('gemini-', 'Gemini ').replace('claude-', 'Claude ')) + '</option>').join('');
+    aiEsc(m.replace('gemini-', 'Gemini ')) + '</option>').join('');
   sel.onchange = () => { AI_CFG.model = sel.value; aiSaveCfg(); };
-}
-
-function aiRenderProviderSettings() {
-  const selected = _id('ai-set-provider');
-  const provider = selected ? selected.value : AI_CFG.provider;
-  const p = AI_PROVIDER_DEFAULTS[provider] || AI_PROVIDER_DEFAULTS.gemini;
-  const label = _id('ai-set-key-label'), input = _id('ai-set-key');
-  if (label) label.textContent = p.keyLabel;
-  if (input) { input.placeholder = p.placeholder; input.value = AI_CFG.keys[provider] || ''; }
-  const mode = _id('ai-set-mode');
-  if (mode) mode.value = provider === 'gemini' ? (AI_CFG.mode || 'auto') : 'direct';
-}
-
-function aiSelectProvider(provider) {
-  if (!AI_PROVIDER_DEFAULTS[provider]) return;
-  AI_CFG.provider = provider;
-  AI_CFG.model = '';
-  AI_TRANSPORT = null;
-  aiSaveCfg();
-  aiRenderModels();
-  aiResolveTransport();
 }
 
 function aiContextNote() {
@@ -8110,14 +8417,12 @@ function aiContextNote() {
 function aiOpenSettings() {
   const wrap = _id('ai-settings');
   if (!wrap) return;
-  _id('ai-set-provider').value = AI_CFG.provider || 'gemini';
-  aiRenderProviderSettings();
   _id('ai-set-mode').value  = AI_CFG.mode || 'auto';
   _id('ai-set-proxy').value = AI_CFG.proxy || AI_PROXY_DEFAULT;
-  _id('ai-set-key').value   = aiCurrentKey();
+  _id('ai-set-key').value   = AI_CFG.key || '';
   _id('ai-set-key').type    = 'password';
   const saved = _id('ai-set-saved');
-  if (saved) saved.textContent = aiCurrentKey() ? 'Saved in this browser: ' + aiMaskKey(aiCurrentKey()) : 'No key saved yet.';
+  if (saved) saved.textContent = AI_CFG.key ? 'Saved in this browser: ' + aiMaskKey(AI_CFG.key) : 'No key saved yet.';
   _id('ai-set-msg').innerHTML = '';
   wrap.classList.add('show');
 }
@@ -8127,7 +8432,7 @@ function aiToggleKeyVisible() {
   if (k) k.type = (k.type === 'password') ? 'text' : 'password';
 }
 function aiClearKey() {
-  AI_CFG.keys[AI_CFG.provider] = '';
+  AI_CFG.key = '';
   aiSaveCfg();
   const k = _id('ai-set-key'); if (k) k.value = '';
   const s = _id('ai-set-saved'); if (s) s.textContent = 'No key saved yet.';
@@ -8135,11 +8440,9 @@ function aiClearKey() {
 }
 
 async function aiSaveSettings() {
-  AI_CFG.provider = _id('ai-set-provider').value;
   AI_CFG.mode  = _id('ai-set-mode').value;
   AI_CFG.proxy = (_id('ai-set-proxy').value || '').trim() || AI_PROXY_DEFAULT;
-  AI_CFG.keys[AI_CFG.provider] = (_id('ai-set-key').value || '').trim();
-  AI_CFG.model = '';
+  AI_CFG.key   = (_id('ai-set-key').value || '').trim();
   aiSaveCfg();
 
   const msg = _id('ai-set-msg');
@@ -8152,7 +8455,7 @@ async function aiSaveSettings() {
   } else if (t === 'direct') {
     // Prove the key actually works before telling the user it does.
     try {
-      await aiCallGemini({ systemInstruction:{ parts:[{ text:'Reply with pong.' }] }, contents:[{ role:'user', parts:[{ text:'ping' }] }],
+      await aiCallGemini({ contents:[{ role:'user', parts:[{ text:'ping' }] }],
                            generationConfig:{ maxOutputTokens:8 } });
       msg.innerHTML = '<span style="color:var(--green);font-weight:700">✓ Key works. Saved in this browser only.</span>';
       setTimeout(aiCloseSettings, 1100);
@@ -8195,7 +8498,7 @@ function aiShowContext() {
   if (!ctx) { aiNotice('Nothing to show — load a dataset first.', 'warn'); return; }
   const json = JSON.stringify(ctx, null, 2);
   AI_VIEW.push({ role:'bot', text:'', raw:
-    '<h4>Exactly what gets sent to ' + aiEsc(aiProvider().label) + '</h4>' +
+    '<h4>Exactly what gets sent to Gemini</h4>' +
     '<p>Aggregated dashboard numbers only — no order IDs, customer names or addresses leave this page.</p>' +
     '<details><summary style="cursor:pointer;font-weight:700;color:var(--blue);font-size:12px">' +
     'Show JSON (' + (json.length / 1024).toFixed(1) + ' KB)</summary>' +
@@ -8232,8 +8535,6 @@ function aiOnOpen() {
     }
     const wrap = _id('ai-settings');
     if (wrap) wrap.addEventListener('click', e => { if (e.target === wrap) aiCloseSettings(); });
-    const provider = _id('ai-provider');
-    if (provider) { provider.value = AI_CFG.provider; provider.onchange = () => aiSelectProvider(provider.value); }
     aiRenderModels();
     aiRenderThread();
   };
